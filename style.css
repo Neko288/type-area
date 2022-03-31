@@ -11,7 +11,7 @@ body {
 p{
   font-size: 4em;
 }
-.text-area{
+#text-area{
   margin-top: 100px;
   width: 100%;
   text-align: center;
