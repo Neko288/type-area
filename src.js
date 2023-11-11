@@ -34,7 +34,16 @@ function toggleStyles() {
   }
 }
 
+function autoResize() {
+  const textArea = document.getElementById('text_area');
+  textArea.style.height = 'auto'; // リセットして高さを再計算するために一旦 'auto' に設定
+
+  // 高さを更新する
+  textArea.style.height = textArea.scrollHeight + 'px';
+}
+
 function countCharacters() {
+  autoResize()
   const text = document.getElementById('text_area').value;
   const count = text.length;
   document.getElementById('characterCount').textContent = count;
