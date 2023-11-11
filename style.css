@@ -1,25 +1,48 @@
 @charset 'utf-8';
 
+:root {
+  --dark-bg-color: #010101;
+  --dark-txt-color: #e7be51;
+  --white-bg-color: #fffdfe;
+  --white-txt-color: #9a0510;
+}
+
+.title{
+  font-size: 6em;
+  font-family: 'Allura', cursive;
+}
+
 body {
   text-align: center;
   width: 100%;
   height: 100%;
-  background: #010101;
-  color: #e7be51;
-  font-family: 'Zen Kurenaido', sans-serif;
+  background: var(--dark-bg-color);
+  color: var(--dark-txt-color);
+  overflow-x: hidden; /* もし横スクロールを無効にしたい場合 */
 }
 
-p{
-  font-size: 4em;
-  user-select: none;
+
+.textcounter{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 140%;
+  font-family: 'Fira Code', monospace;
 }
-#text-area{
+#textcountercolor{
+  background-color:black;
+}
+
+#text_area{
   margin-top: 100px;
   width: 100%;
+  font-family: 'Shippori Mincho';
   text-align: center;
-  font-size: 2em;
-  color: #e7be51;
-  background: #010101; 
+  font-size: 1.5em;
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+  background: var(--dark-bg-color);
+  color: var(--dark-txt-color);
   overflow: hidden;
   border: none;
   resize: none;
@@ -27,5 +50,53 @@ p{
 }
 
 footer{
-  font-size: 0.3em;
+  font-size:1.2em;
+  font-family: 'Allura', cursive;
+}
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--dark-bg-color);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--dark-txt-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }

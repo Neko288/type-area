@@ -8,17 +8,28 @@
     <link rel="shortcut icon" href=type-area-favicon.png> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Fira+Code:wght@600&family=Shippori+Mincho:wght@500&display=swap" rel="stylesheet">
   </head>
 
   <body id="body">
-    <p onClick='white()' ondblclick="reload()">Type Area.</p>
-    <textarea id="text-area" cols="100" rows="50" placeholder='Here type!'></textarea>
-    <p style="font-size: 1em">Type Area.の文字をクリックしたり、ダブルクリックしたら何かが起こるかも</p>
-  
+
+    <div class="darkmodebutton " style="text-align: right; margin: 3%;"><label class="switch">
+      <input type="checkbox" id="changeStyleButton" onclick="toggleStyles()">
+      <span class="slider round"></span>
+    </label></div>
+
+    <p class="title">Type Area.</p>
+    <label class="switch">
+      <input type="checkbox" id="alignmentSwitch" onclick="switchAlignment()">
+      <span class="slider round"></span>
+    </label>
+    <textarea id="text_area" cols="100" rows="20" placeholder='Here type!' oninput="countCharacters()"></textarea>
+    <p class="textcounter"><span id="textcountercolor">TextCounter: <span id="characterCount">0</span></span>
+    <button  onclick="saveTextAsFile()"><img src="software-download.svg" style="background: transparent;" alt="Button Image"></button>
+    </p>
     <footer>
       <p class="copyright">&copy; 2021 <a href='https://github.com/Neko288' target="_blank" style='text-decoration:none;'>Neko288(KURODA.M)</a></p>
-      <p>Server : <a href="https://github.com/Neko288/type-area" target="_blank" style='text-decoration:none;'>Github Pages</a></p>
+      <p>Server : <a href="https://github.com/Neko288/type-area" target="_blank" style='text-decoration:none; padding-bottom: 6%;'>Github Pages</a></p>
     </footer>
     <script type="text/javascript" src="src.js"></script>
   </body>
